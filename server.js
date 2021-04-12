@@ -30,7 +30,7 @@ app.use(
   cors({
     credentials: true,
     // origin: "http://localhost:3000",
-    origin: "https://dssfontend.herokuapp.com/",
+    origin: "https://dssfontend.herokuapp.com",
   })
 );
 
