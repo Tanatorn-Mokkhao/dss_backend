@@ -44,7 +44,7 @@ exports.signin = (req, res) => {
           .status(202)
           .cookie("token", token, {
             sameSite: "strict",
-            path: "https://dssfontend.herokuapp.com",
+            path: "/",
             expires: new Date(new Date().getTime() + 60 * 60 * 24 * 1000),
             httpOnly: true,
           })
