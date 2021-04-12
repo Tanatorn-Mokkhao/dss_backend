@@ -31,6 +31,7 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
+  console.log("request login");
   const { email, password } = req.body.payload;
   User.findOne({ email: email }).exec((error, user) => {
     if (error) return res.status(400).json({ error: "this email not exist" });
@@ -43,7 +44,10 @@ exports.signin = (req, res) => {
         res
           .status(202)
           .cookie("token", token, {
+            // sameSite: "none",
+            // secure: true,
             sameSite: "strict",
+            secure: true,
             path: "/",
             expires: new Date(new Date().getTime() + 60 * 60 * 24 * 1000),
             httpOnly: true,

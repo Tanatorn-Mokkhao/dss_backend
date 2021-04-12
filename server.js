@@ -9,6 +9,7 @@ const chartRoutes = require("./src/route/chart");
 const initialRoutes = require("./src/route/initialData");
 const dashBoardRoutes = require("./src/route/dashboard");
 const testDeployRoutes = require("./src/route/testdeploy");
+const session = require("express-session");
 const app = express();
 
 env.config();
@@ -29,12 +30,17 @@ mongoose
 app.use(
   cors({
     credentials: true,
-    origin: "https://dssfontend.herokuapp.com",
+    origin: [
+      "http://localhost:3000",
+      "http://dssfontend.herokuapp.com",
+      "https://dssfontend.herokuapp.com",
+    ],
   })
 );
 // origin: "http://localhost:3000",
 
 app.use(cookieParser());
+
 // app.use(express.json());
 app.use(express.json({ limit: "200kb" }));
 app.use(express.urlencoded({ extended: false }));
