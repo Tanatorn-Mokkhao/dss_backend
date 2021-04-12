@@ -9,7 +9,8 @@ const chartRoutes = require("./src/route/chart");
 const initialRoutes = require("./src/route/initialData");
 const dashBoardRoutes = require("./src/route/dashboard");
 const testDeployRoutes = require("./src/route/testdeploy");
-const session = require("express-session");
+const schedule = require("node-schedule");
+
 const app = express();
 
 env.config();
@@ -50,6 +51,11 @@ app.use("/api", chartRoutes);
 app.use("/api", initialRoutes);
 app.use("/api", dashBoardRoutes);
 app.use("/api", testDeployRoutes);
+
+(function wakeup() {
+  console.log("Woke up!");
+  setTimeout(wakeup, 1500000); //25m
+})();
 
 app.listen(process.env.PORT, () => {
   console.log("running on port ", process.env.PORT);
