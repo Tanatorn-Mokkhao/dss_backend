@@ -8,6 +8,7 @@ const projectRoutes = require("./src/route/project");
 const chartRoutes = require("./src/route/chart");
 const initialRoutes = require("./src/route/initialData");
 const dashBoardRoutes = require("./src/route/dashboard");
+const testDeployRoutes = require("./src/route/testdeploy");
 const app = express();
 
 env.config();
@@ -41,6 +42,7 @@ app.use("/api", projectRoutes);
 app.use("/api", chartRoutes);
 app.use("/api", initialRoutes);
 app.use("/api", dashBoardRoutes);
+app.use("/api", testDeployRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log("running on port ", process.env.PORT);
