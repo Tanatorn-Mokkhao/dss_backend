@@ -9,7 +9,6 @@ const chartRoutes = require("./src/route/chart");
 const initialRoutes = require("./src/route/initialData");
 const dashBoardRoutes = require("./src/route/dashboard");
 const testDeployRoutes = require("./src/route/testdeploy");
-const schedule = require("node-schedule");
 
 const app = express();
 
