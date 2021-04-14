@@ -47,7 +47,7 @@ exports.signin = (req, res) => {
             // sameSite: "none",
             // secure: true,
             sameSite: "strict",
-            secure: true,
+            // secure: true,
             path: "/",
             expires: new Date(new Date().getTime() + 60 * 60 * 24 * 1000),
             httpOnly: true,
