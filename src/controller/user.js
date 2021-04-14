@@ -44,7 +44,7 @@ exports.signin = (req, res) => {
         res
           .status(202)
           .cookie("token", token, {
-            sameSite: "none",
+            // sameSite: "none",
             secure: true,
             // sameSite: "strict",
             // secure: true,
