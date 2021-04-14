@@ -44,9 +44,9 @@ exports.signin = (req, res) => {
         res
           .status(202)
           .cookie("token", token, {
-            // sameSite: "none",
-            // secure: true,
-            sameSite: "strict",
+            sameSite: "none",
+            secure: true,
+            // sameSite: "strict",
             // secure: true,
             path: "/",
             expires: new Date(new Date().getTime() + 60 * 60 * 24 * 1000),
