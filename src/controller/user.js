@@ -22,7 +22,7 @@ exports.signup = (req, res) => {
         add.save((error, user) => {
           if (error) return res.status(400).json({ error });
           if (user) {
-            return res.status(201).json({ user });
+            return res.status(201).json({ message: "successes" });
           }
         });
       });
